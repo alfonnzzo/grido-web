@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Catálogo completo de productos Grido. Helados familiares, copas, postres y especialidades a los mejores precios. Más de 50 sabores para elegir.">
+  <meta name="keywords" content="productos Grido, helados familiares, copas helado, postres, precios helados Argentina">
+  <meta name="author" content="Grido S.A.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type"        content="website">
+  <meta property="og:title"       content="Productos | Grido Helados">
+  <meta property="og:description" content="Más de 50 sabores en helados familiares, copas y postres al mejor precio.">
+  <meta property="og:url"         content="https://www.grido.com.ar/productos.html">
+  <link rel="canonical" href="https://www.grido.com.ar/productos.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Datos estructurados: lista de productos -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Productos Grido Helados",
+    "description": "Catálogo de helados familiares, copas, postres y especialidades",
+    "url": "https://www.grido.com.ar/productos.html",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Familiar Frutilla" },
+      { "@type": "ListItem", "position": 2, "name": "Familiar Dulce de Leche" },
+      { "@type": "ListItem", "position": 3, "name": "Copa Mixta" },
+      { "@type": "ListItem", "position": 4, "name": "Vasito de Chocolate" }
+    ]
+  }
+  </script>
+
+  <title>Productos | Grido Helados</title>
+</head>
+<body>
+
+  <header>
+    <nav class="navbar" role="navigation" aria-label="Navegación principal">
+      <div class="nav-inner">
+        <a href="index.html" class="nav-logo">gri<span class="accent">do</span></a>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="productos.html" class="active">Productos</a></li>
+          <li><a href="promociones.html">Promociones</a></li>
+          <li><a href="sucursales.html">Sucursales</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="promociones.html" class="nav-promo">🍦 Ofertas</a></li>
+        </ul>
+        <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+    <!-- Page hero -->
+    <section class="page-hero" aria-label="Encabezado de productos">
+      <span class="bg-icon" aria-hidden="true">🍦</span>
+      <div class="container">
+        <nav aria-label="Breadcrumb">
+          <ol style="display:flex;gap:0.5rem;justify-content:center;font-size:0.8rem;opacity:0.65;list-style:none;margin-bottom:0.75rem;">
+            <li><a href="index.html" style="color:white;">Inicio</a></li>
+            <li aria-hidden="true">/</li>
+            <li aria-current="page">Productos</li>
+          </ol>
+        </nav>
+        <h1>Nuestros Productos</h1>
+        <p>Más de 50 sabores en helados familiares, copas, postres y especialidades. Encontrá el tuyo.</p>
+      </div>
+    </section>
+
+    <!-- Catálogo -->
+    <section aria-label="Catálogo de productos">
+      <div class="container">
+
+        <!-- Filtros de categoría -->
+        <div class="filter-bar" role="tablist" aria-label="Filtrar productos por categoría">
+          <button class="tab-btn active" data-filter="all"      role="tab" aria-selected="true">Todos</button>
+          <button class="tab-btn"        data-filter="familiar"  role="tab" aria-selected="false">Familiares</button>
+          <button class="tab-btn"        data-filter="copa"      role="tab" aria-selected="false">Copas y Vasitos</button>
+          <button class="tab-btn"        data-filter="postre"    role="tab" aria-selected="false">Postres</button>
+          <button class="tab-btn"        data-filter="especial"  role="tab" aria-selected="false">Especialidades</button>
+        </div>
+
+        <div class="card-grid">
+
+          <!-- FAMILIARES -->
+          <article class="card reveal" data-cat="familiar"
+                   itemscope itemtype="https://schema.org/Product">
+            <div class="card-thumb bg-1">
+              <span role="img" aria-label="Helado de frutilla">🍓</span>
+              <span class="card-badge">⭐ Top ventas</span>
+            </div>
+            <div class="card-body">
+              <p class="card-tag">Familiar 1kg</p>
+              <h2 class="card-title" itemprop="name">Familiar Frutilla</h2>
+              <p class="card-desc" itemprop="description">
+                Cremoso helado de frutilla con trocitos de fruta real. El clásico que nunca falla.
+              </p>
+              <div class="card-footer">
+                <span class="card-price" itemprop="price" content="2890">
+                  <sub>$</sub> 2.890
+                </span>
+                <meta itemprop="priceCurrency" content="ARS">
+                <a href="promociones.html" class="btn btn-blue" style="padding:0.42rem 1rem;font-size:0.8rem;">Comprar</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card reveal" data-cat="familiar"
+                   itemscope itemtype="https://schema.org/Product">
+            <div class="card-thumb bg-2">
+              <span role="img" aria-label="Helado de dulce de leche">🍮</span>
+              <span class="card-badge">🔥 Promo</span>
+            </div>
+            <div class="card-body">
+              <p class="card-tag">Familiar 1kg</p>
+              <h2 class="card-title" itemprop="name">Familiar Dulce de Leche</h2>
+              <p class="card-desc" itemprop="description">
+                El sabor más argentino en todo su esplendor. Con trocitos crujientes de alfajor.
+              </p>
+              <div class="card-footer">
+                <span class="card-price"><sub>$</sub> 2.890</span>
+                <a href="promociones.html" class="btn btn-blue" style="padding:0.42rem 1rem;font-size:0.8rem;">Comprar</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card reveal" data-cat="familiar"
+                   itemscope itemtype="https://schema.org/Product">
+            <div class="card-thumb bg-3">
+              <span role="img" aria-label="Helado de chocolate">🍫</span>
+            </div>
+            <div class="card-body">
+              <p class="card-tag">Familiar 1kg</p>
+              <h2 class="card-title" itemprop="name">Familiar Chocolate</h2>
+              <p class="card-desc" itemprop="description">
+                Intenso sabor a cacao con chips de chocolate belga. Para los amantes del chocolate.
+              </p>
+              <div class="card-footer">
+                <span class="card-price"><sub>$</sub> 2.890</span>
+                <a href="promociones.html" class="btn btn-blue" style="padding:0.42rem 1rem;font-size:0.8rem;">Comprar</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- COPAS -->
+          <article class="card reveal" data-cat="copa"
+                   itemscope itemtype="https://schema.org/Product">
+            <div class="card-thumb bg-4">
+              <span role="img" aria-label="Copa mixta">🍧</span>
+            </div>
+            <div class="card-body">
+              <p class="card-tag">Copa</p>
+              <h2 class="card-title" itemprop="name">Copa Mixta</h2>
+              <p class="card-desc" itemprop="description">
+                3 bochas a elección con toppings de granola, salsa de chocolate y crema chantilly.
+              </p>
+              <div class="card-footer">
+                <span class="card-price"><sub>$</sub> 1.450</span>
+                <a href="promociones.html" class="btn btn-blue" style="padding:0.42rem 1rem;font-size:0.8rem;">Comprar</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card reveal" data-cat="copa"
+                   itemscope itemtype="https://schema.org/Product">
+            <div class="card-thumb bg-1">
+              <span role="img" aria-label="Vasito de frutilla">🍓</span>
+            </div>
+            <div class="card-body">
+              <p class="card-tag">Vasito</p>
+              <h2 class="card-title" itemprop="name">Vasito Frutilla</h2>
+              <p class="card-desc" itemprop="description">
+                Tamaño individual perfecto para una merienda fresca. 1 bocha del sabor elegido.
+              </p>
+              <div class="card-footer">
+                <span class="card-price"><sub>$</sub> 750</span>
+                <a href="promociones.html" class="btn btn-blue" style="padding:0.42rem 1rem;font-size:0.8rem;">Comprar</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card reveal" data-cat="copa"
+                   itemscope itemtype="https://schema.org/Product">
+            <div class="card-thumb bg-2">
+              <span role="img" aria-label="Vasito de vainilla">🍦</span>
+              <span class="card-badge">Nuevo</span>
+            </div>
+            <div class="card-body">
+              <p class="card-tag">Copa</p>
+              <h2 class="card-title" itemprop="name">Copa Sundae</h2>
+              <p class="card-desc" itemprop="description">
+                Vainilla con salsa de caramelo, maní garrapiñado y crema batida. Un clásico reinventado.
+              </p>
+              <div class="card-footer">
+                <span class="card-price"><sub>$</sub> 1.680</span>
+                <a href="promociones.html" class="btn btn-blue" style="padding:0.42rem 1rem;font-size:0.8rem;">Comprar</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- POSTRES -->
+          <article class="card reveal" data-cat="postre"
+                   itemscope itemtype="https://schema.org/Product">
+            <div class="card-thumb bg-6">
+              <span role="img" aria-label="Torta helada">🎂</span>
+            </div>
+            <div class="card-body">
+              <p class="card-tag">Postre</p>
+              <h2 class="card-title" itemprop="name">Torta Helada Familiar</h2>
+              <p class="card-desc" itemprop="description">
+                Torta de brownie con helado de chocolate y cubierta de ganache. Para celebrar en grande.
+              </p>
+              <div class="card-footer">
+                <span class="card-price"><sub>$</sub> 4.200</span>
+                <a href="promociones.html" class="btn btn-blue" style="padding:0.42rem 1rem;font-size:0.8rem;">Comprar</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card reveal" data-cat="postre"
+                   itemscope itemtype="https://schema.org/Product">
+            <div class="card-thumb bg-5">
+              <span role="img" aria-label="Paleta helada">🍡</span>
+            </div>
+            <div class="card-body">
+              <p class="card-tag">Postre</p>
+              <h2 class="card-title" itemprop="name">Paletas Surtidas x4</h2>
+              <p class="card-desc" itemprop="description">
+                Pack de 4 paletas heladas: frutilla, limón, durazno y mango. Refrescantes y naturales.
+              </p>
+              <div class="card-footer">
+                <span class="card-price"><sub>$</sub> 1.980</span>
+                <a href="promociones.html" class="btn btn-blue" style="padding:0.42rem 1rem;font-size:0.8rem;">Comprar</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- ESPECIALIDADES -->
+          <article class="card reveal" data-cat="especial"
+                   itemscope itemtype="https://schema.org/Product">
+            <div class="card-thumb bg-3">
+              <span role="img" aria-label="Helado artesanal especial">🧁</span>
+              <span class="card-badge">Temporada</span>
+            </div>
+            <div class="card-body">
+              <p class="card-tag">Especialidad</p>
+              <h2 class="card-title" itemprop="name">Profiterol Helado</h2>
+              <p class="card-desc" itemprop="description">
+                Profiteroles rellenos con helado de crema y bañados en chocolate belga caliente.
+              </p>
+              <div class="card-footer">
+                <span class="card-price"><sub>$</sub> 2.100</span>
+                <a href="promociones.html" class="btn btn-blue" style="padding:0.42rem 1rem;font-size:0.8rem;">Comprar</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">gri<span class="accent">do</span></a>
+          <p>La cadena de heladerías más popular de Argentina. Más de 1700 sucursales para que el sabor siempre esté cerca tuyo.</p>
+        </div>
+        <nav class="footer-col"><h4>Productos</h4><ul>
+          <li><a href="productos.html">Familiares</a></li>
+          <li><a href="productos.html">Copas</a></li>
+          <li><a href="productos.html">Postres</a></li>
+          <li><a href="productos.html">Especialidades</a></li>
+        </ul></nav>
+        <nav class="footer-col"><h4>Empresa</h4><ul>
+          <li><a href="#">Sobre Grido</a></li>
+          <li><a href="sucursales.html">Sucursales</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul></nav>
+        <nav class="footer-col"><h4>Legal</h4><ul>
+          <li><a href="#">Privacidad</a></li>
+          <li><a href="#">Términos</a></li>
+        </ul></nav>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Grido S.A. Todos los derechos reservados.</span>
+        <span class="seo-note">Proyecto académico – Seminario de Big Data</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Encontrá la sucursal Grido más cercana. Más de 1700 heladerías en toda Argentina: Formosa, Buenos Aires, Córdoba, Rosario y más. Consultá horarios y direcciones.">
+  <meta name="keywords" content="sucursales Grido, heladería cerca, Grido Formosa, Grido Buenos Aires, Grido Córdoba, horarios heladería">
+  <meta name="author" content="Grido S.A.">
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:type"        content="website">
+  <meta property="og:title"       content="Sucursales | Grido Helados">
+  <meta property="og:description" content="Más de 1700 heladerías en toda Argentina. Encontrá la más cercana.">
+  <meta property="og:url"         content="https://www.grido.com.ar/sucursales.html">
+  <meta property="og:locale"      content="es_AR">
+
+  <link rel="canonical" href="https://www.grido.com.ar/sucursales.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Datos estructurados: lista de sucursales locales -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FoodEstablishment",
+    "name": "Grido Helados – Sucursales Argentina",
+    "url": "https://www.grido.com.ar/sucursales.html",
+    "numberOfEmployees": { "@type": "QuantitativeValue", "value": "5000+" },
+    "location": [
+      {
+        "@type": "Place",
+        "name": "Grido Formosa Centro",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Av. 25 de Mayo 450",
+          "addressLocality": "Formosa",
+          "addressRegion": "Formosa",
+          "addressCountry": "AR"
+        }
+      },
+      {
+        "@type": "Place",
+        "name": "Grido Formosa Sur",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Av. Gutnisky 3200",
+          "addressLocality": "Formosa",
+          "addressRegion": "Formosa",
+          "addressCountry": "AR"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <title>Sucursales | Grido Helados</title>
+
+  <style>
+    /* ── Estilos específicos de Sucursales ──── */
+
+    /* Buscador de sucursales */
+    .branch-search-bar {
+      display: flex;
+      gap: 0.7rem;
+      margin-bottom: 2.5rem;
+      flex-wrap: wrap;
+    }
+    .branch-search-bar input {
+      flex: 1;
+      min-width: 200px;
+      padding: 0.75rem 1.2rem;
+      border: 2px solid var(--mist);
+      border-radius: 32px;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      color: var(--navy);
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .branch-search-bar input:focus {
+      border-color: var(--blue-mid);
+      box-shadow: 0 0 0 3px rgba(0,85,204,0.1);
+    }
+    .branch-search-bar button {
+      background: var(--blue-deep);
+      color: var(--white);
+      border: none;
+      border-radius: 32px;
+      padding: 0.75rem 1.6rem;
+      font-weight: 700;
+      font-size: 0.9rem;
+      font-family: var(--font-body);
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .branch-search-bar button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(0,61,160,0.2);
+    }
+
+    /* Tabs de provincia */
+    .province-tabs {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+
+    /* Stats de cobertura */
+    .coverage-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.2rem;
+      margin-bottom: 3rem;
+    }
+    .cov-stat {
+      background: var(--white);
+      border: 1px solid var(--mist);
+      border-radius: var(--radius);
+      padding: 1.4rem;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+    .cov-num {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--blue-deep);
+      line-height: 1;
+      display: block;
+    }
+    .cov-label {
+      font-size: 0.78rem;
+      color: var(--gray);
+      margin-top: 0.25rem;
+    }
+
+    /* Tarjetas de sucursal mejoradas */
+    .branch-card .open-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.15rem 0.55rem;
+      border-radius: 12px;
+      margin-top: 0.4rem;
+    }
+    .open-badge.open   { background: #DCFCE7; color: #15803D; }
+    .open-badge.closed { background: #FEE2E2; color: #B91C1C; }
+
+    /* Mapa visual decorativo */
+    .map-visual {
+      background: linear-gradient(135deg, var(--blue-light) 0%, #D4E3FF 100%);
+      border: 2px solid var(--mist);
+      border-radius: var(--radius);
+      height: 320px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      color: var(--blue-mid);
+      margin-bottom: 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .map-visual::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 30% 40%, rgba(0,85,204,0.08) 0%, transparent 45%),
+        radial-gradient(circle at 70% 60%, rgba(255,194,0,0.08) 0%, transparent 40%);
+    }
+    .map-icon-big { font-size: 3.5rem; }
+    .map-visual h3 {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--blue-deep);
+    }
+    .map-visual p {
+      font-size: 0.85rem;
+      color: var(--gray);
+      text-align: center;
+      max-width: 300px;
+      line-height: 1.55;
+    }
+    /* Pins decorativos */
+    .map-pin {
+      position: absolute;
+      font-size: 1.5rem;
+      animation: pin-bounce 2s ease-in-out infinite;
+    }
+    .map-pin:nth-child(1) { top: 22%; left: 25%; animation-delay: 0s; }
+    .map-pin:nth-child(2) { top: 55%; left: 60%; animation-delay: 0.4s; }
+    .map-pin:nth-child(3) { top: 30%; left: 70%; animation-delay: 0.8s; }
+    .map-pin:nth-child(4) { top: 65%; left: 35%; animation-delay: 1.2s; }
+    .map-pin:nth-child(5) { top: 18%; left: 50%; animation-delay: 0.6s; }
+    @keyframes pin-bounce {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(-6px); }
+    }
+
+    /* Banner lateral publicidad */
+    .branch-layout {
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      gap: 2rem;
+      align-items: start;
+    }
+    .ad-sidebar {
+      position: sticky;
+      top: 80px;
+    }
+    .ad-box {
+      background: linear-gradient(145deg, var(--orange), #FF9500);
+      color: var(--white);
+      border-radius: var(--radius);
+      padding: 1.75rem 1.5rem;
+      text-align: center;
+      box-shadow: 0 8px 28px rgba(255,100,34,0.25);
+      margin-bottom: 1.2rem;
+    }
+    .ad-box .ad-emoji { font-size: 2.5rem; margin-bottom: 0.5rem; }
+    .ad-box h3 {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 900;
+      margin-bottom: 0.4rem;
+    }
+    .ad-box p { font-size: 0.82rem; opacity: 0.88; margin-bottom: 1rem; line-height: 1.5; }
+
+    .ad-box-blue {
+      background: linear-gradient(145deg, var(--blue-deep), var(--blue-mid));
+    }
+
+    @media (max-width: 860px) {
+      .branch-layout { grid-template-columns: 1fr; }
+      .ad-sidebar { position: static; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+      .coverage-stats { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 520px) {
+      .coverage-stats { grid-template-columns: 1fr 1fr; }
+      .ad-sidebar { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══════════════════════════════ NAVBAR ══ -->
+  <header>
+    <nav class="navbar" role="navigation" aria-label="Navegación principal">
+      <div class="nav-inner">
+        <a href="index.html" class="nav-logo" aria-label="Grido - ir al inicio">
+          gri<span class="accent">do</span>
+        </a>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="productos.html">Productos</a></li>
+          <li><a href="promociones.html">Promociones</a></li>
+          <li><a href="sucursales.html" class="active">Sucursales</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="promociones.html" class="nav-promo">🍦 Ofertas</a></li>
+        </ul>
+        <button class="hamburger" id="hamburger"
+                aria-label="Abrir menú" aria-expanded="false"
+                aria-controls="navLinks">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+    <!-- PAGE HERO -->
+    <section class="page-hero" aria-label="Encabezado de sucursales">
+      <span class="bg-icon" aria-hidden="true">📍</span>
+      <div class="container">
+        <nav aria-label="Breadcrumb">
+          <ol style="display:flex;gap:0.5rem;justify-content:center;font-size:0.8rem;opacity:0.65;list-style:none;margin-bottom:0.75rem;">
+            <li><a href="index.html" style="color:white;">Inicio</a></li>
+            <li aria-hidden="true">/</li>
+            <li aria-current="page">Sucursales</li>
+          </ol>
+        </nav>
+        <h1>Encontrá tu Grido más cercano</h1>
+        <p>
+          Más de 1700 sucursales en toda Argentina y Latinoamérica.
+          Siempre hay un Grido cerca tuyo.
+        </p>
+      </div>
+    </section>
+
+    <!-- ESTADÍSTICAS DE COBERTURA -->
+    <section aria-label="Cobertura nacional">
+      <div class="container">
+        <div class="coverage-stats">
+          <div class="cov-stat reveal">
+            <span class="cov-num">+1700</span>
+            <span class="cov-label">Sucursales en Argentina</span>
+          </div>
+          <div class="cov-stat reveal">
+            <span class="cov-num">23</span>
+            <span class="cov-label">Provincias cubiertas</span>
+          </div>
+          <div class="cov-stat reveal">
+            <span class="cov-num">5</span>
+            <span class="cov-label">Países de Latinoamérica</span>
+          </div>
+          <div class="cov-stat reveal">
+            <span class="cov-num">25+</span>
+            <span class="cov-label">Años de expansión</span>
+          </div>
+        </div>
+
+        <!-- MAPA VISUAL -->
+        <div class="map-visual reveal" role="img" aria-label="Mapa decorativo de sucursales Grido en Argentina">
+          <!-- Pins animados -->
+          <span class="map-pin" aria-hidden="true">📍</span>
+          <span class="map-pin" aria-hidden="true">📍</span>
+          <span class="map-pin" aria-hidden="true">📍</span>
+          <span class="map-pin" aria-hidden="true">📍</span>
+          <span class="map-pin" aria-hidden="true">📍</span>
+          <!-- Contenido central -->
+          <div style="position:relative;text-align:center;">
+            <div class="map-icon-big" aria-hidden="true">🗺️</div>
+            <h3>Cobertura Nacional</h3>
+            <p>
+              Buscá tu sucursal más cercana ingresando tu ciudad o
+              usando el filtro por provincia.
+            </p>
+            <a href="contacto.html" class="btn btn-blue" style="margin-top:0.6rem;display:inline-flex;">
+              📍 Usar mi ubicación
+            </a>
+          </div>
+        </div>
+
+        <!-- BUSCADOR -->
+        <div class="branch-search-bar" role="search" aria-label="Buscar sucursal">
+          <input
+            type="search"
+            id="branchSearch"
+            placeholder="🔍  Buscá por ciudad, barrio o calle…"
+            aria-label="Buscar sucursal por ciudad o dirección"
+          >
+          <button onclick="filterBranches()" aria-label="Buscar">Buscar sucursal</button>
+        </div>
+
+        <!-- FILTROS POR PROVINCIA -->
+        <div class="province-tabs" role="tablist" aria-label="Filtrar por provincia">
+          <button class="tab-btn active" data-province="all"     role="tab" aria-selected="true">Todas</button>
+          <button class="tab-btn"        data-province="formosa" role="tab" aria-selected="false">Formosa</button>
+          <button class="tab-btn"        data-province="bsas"    role="tab" aria-selected="false">Buenos Aires</button>
+          <button class="tab-btn"        data-province="cordoba" role="tab" aria-selected="false">Córdoba</button>
+          <button class="tab-btn"        data-province="rosario" role="tab" aria-selected="false">Rosario</button>
+          <button class="tab-btn"        data-province="mendoza" role="tab" aria-selected="false">Mendoza</button>
+        </div>
+
+        <!-- LAYOUT CON SIDEBAR PUBLICITARIO -->
+        <div class="branch-layout">
+
+          <!-- Lista de sucursales -->
+          <div>
+            <div class="branch-grid" id="branchGrid" aria-label="Lista de sucursales">
+
+              <!-- FORMOSA -->
+              <article class="branch-card reveal" data-province="formosa"
+                       itemscope itemtype="https://schema.org/LocalBusiness">
+                <span class="b-icon" aria-hidden="true">🏪</span>
+                <div>
+                  <h3 class="branch-name" itemprop="name">Grido Formosa Centro</h3>
+                  <p class="branch-addr" itemprop="address">Av. 25 de Mayo 450, Formosa Capital</p>
+                  <p class="branch-hours" itemprop="openingHours">Lun–Dom · 10:00 a 23:00 hs</p>
+                  <span class="open-badge open" aria-label="Sucursal abierta">● Abierta ahora</span>
+                </div>
+              </article>
+
+              <article class="branch-card reveal" data-province="formosa"
+                       itemscope itemtype="https://schema.org/LocalBusiness">
+                <span class="b-icon" aria-hidden="true">🏪</span>
+                <div>
+                  <h3 class="branch-name" itemprop="name">Grido Formosa Sur</h3>
+                  <p class="branch-addr" itemprop="address">Av. Gutnisky 3200, Formosa</p>
+                  <p class="branch-hours">Lun–Dom · 10:00 a 22:30 hs</p>
+                  <span class="open-badge open">● Abierta ahora</span>
+                </div>
+              </article>
+
+              <article class="branch-card reveal" data-province="formosa"
+                       itemscope itemtype="https://schema.org/LocalBusiness">
+                <span class="b-icon" aria-hidden="true">🏪</span>
+                <div>
+                  <h3 class="branch-name" itemprop="name">Grido Formosa Norte</h3>
+                  <p class="branch-addr" itemprop="address">Calle Brandsen 780, Formosa</p>
+                  <p class="branch-hours">Mar–Dom · 14:00 a 23:00 hs</p>
+                  <span class="open-badge closed">● Cerrada ahora</span>
+                </div>
+              </article>
+
+              <!-- BUENOS AIRES -->
+              <article class="branch-card reveal" data-province="bsas"
+                       itemscope itemtype="https://schema.org/LocalBusiness">
+                <span class="b-icon" aria-hidden="true">🏙️</span>
+                <div>
+                  <h3 class="branch-name" itemprop="name">Grido Palermo</h3>
+                  <p class="branch-addr" itemprop="address">Av. Santa Fe 3400, CABA</p>
+                  <p class="branch-hours">Lun–Dom · 11:00 a 24:00 hs</p>
+                  <span class="open-badge open">● Abierta ahora</span>
+                </div>
+              </article>
+
+              <article class="branch-card reveal" data-province="bsas"
+                       itemscope itemtype="https://schema.org/LocalBusiness">
+                <span class="b-icon" aria-hidden="true">🏙️</span>
+                <div>
+                  <h3 class="branch-name" itemprop="name">Grido Belgrano</h3>
+                  <p class="branch-addr" itemprop="address">Cabildo 2150, CABA</p>
+                  <p class="branch-hours">Lun–Dom · 11:00 a 23:30 hs</p>
+                  <span class="open-badge open">● Abierta ahora</span>
+                </div>
+              </article>
+
+              <article class="branch-card reveal" data-province="bsas"
+                       itemscope itemtype="https://schema.org/LocalBusiness">
+                <span class="b-icon" aria-hidden="true">🏙️</span>
+                <div>
+                  <h3 class="branch-name" itemprop="name">Grido La Plata Centro</h3>
+                  <p class="branch-addr" itemprop="address">Calle 7 N° 900, La Plata</p>
+                  <p class="branch-hours">Lun–Dom · 10:30 a 23:00 hs</p>
+                  <span class="open-badge open">● Abierta ahora</span>
+                </div>
+              </article>
+
+              <!-- CÓRDOBA -->
+              <article class="branch-card reveal" data-province="cordoba"
+                       itemscope itemtype="https://schema.org/LocalBusiness">
+                <span class="b-icon" aria-hidden="true">🌆</span>
+                <div>
+                  <h3 class="branch-name" itemprop="name">Grido Córdoba Centro</h3>
+                  <p class="branch-addr" itemprop="address">Av. Colón 250, Córdoba Capital</p>
+                  <p class="branch-hours">Lun–Dom · 10:00 a 23:30 hs</p>
+                  <span class="open-badge open">● Abierta ahora</span>
+                </div>
+              </article>
+
+              <article class="branch-card reveal" data-province="cordoba"
+                       itemscope itemtype="https://schema.org/LocalBusiness">
+                <span class="b-icon" aria-hidden="true">🌆</span>
+                <div>
+                  <h3 class="branch-name" itemprop="name">Grido Villa Carlos Paz</h3>
+                  <p class="branch-addr" itemprop="address">Av. San Martín 1100, V. Carlos Paz</p>
+                  <p class="branch-hours">Lun–Dom · 11:00 a 24:00 hs</p>
+                  <span class="open-badge open">● Abierta ahora</span>
+                </div>
+              </article>
+
+              <!-- ROSARIO -->
+              <article class="branch-card reveal" data-province="rosario"
+                       itemscope itemtype="https://schema.org/LocalBusiness">
+                <span class="b-icon" aria-hidden="true">🏛️</span>
+                <div>
+                  <h3 class="branch-name" itemprop="name">Grido Rosario Centro</h3>
+                  <p class="branch-addr" itemprop="address">Corrientes 800, Rosario</p>
+                  <p class="branch-hours">Lun–Dom · 10:00 a 23:00 hs</p>
+                  <span class="open-badge open">● Abierta ahora</span>
+                </div>
+              </article>
+
+              <!-- MENDOZA -->
+              <article class="branch-card reveal" data-province="mendoza"
+                       itemscope itemtype="https://schema.org/LocalBusiness">
+                <span class="b-icon" aria-hidden="true">🍇</span>
+                <div>
+                  <h3 class="branch-name" itemprop="name">Grido Mendoza Capital</h3>
+                  <p class="branch-addr" itemprop="address">Av. San Martín 1400, Mendoza</p>
+                  <p class="branch-hours">Lun–Dom · 11:00 a 23:00 hs</p>
+                  <span class="open-badge open">● Abierta ahora</span>
+                </div>
+              </article>
+
+            </div><!-- /branch-grid -->
+          </div>
+
+          <!-- SIDEBAR PUBLICITARIO (Punto 13: elementos publicitarios) -->
+          <aside class="ad-sidebar" aria-label="Publicidad y promociones">
+
+            <div class="ad-box reveal" role="complementary" aria-label="Promoción 2x1">
+              <div class="ad-emoji" aria-hidden="true">🍦</div>
+              <h3>¡2x1 los martes!</h3>
+              <p>En tu sucursal más cercana. Llevá 2 familiares y pagá solo 1.</p>
+              <a href="promociones.html" class="btn btn-white" style="background:var(--white);color:var(--orange);font-size:0.84rem;">
+                Ver promo →
+              </a>
+            </div>
+
+            <div class="ad-box ad-box-blue reveal" role="complementary" aria-label="Grido Club">
+              <div class="ad-emoji" aria-hidden="true">💳</div>
+              <h3>Grido Club</h3>
+              <p>Sumate y acumulá puntos en cada compra. Copa gratis en tu cumpleaños.</p>
+              <a href="contacto.html" class="btn btn-primary" style="font-size:0.84rem;">
+                Registrarme gratis
+              </a>
+            </div>
+
+            <!-- Info SEO local -->
+            <div style="background:var(--ice);border:1px solid var(--mist);border-radius:var(--radius);padding:1.2rem 1.3rem;font-size:0.82rem;color:var(--gray);line-height:1.6;">
+              <strong style="color:var(--navy);display:block;margin-bottom:0.4rem;">📞 Atención al cliente</strong>
+              0800-555-GRIDO (47436)<br>
+              <a href="contacto.html" style="color:var(--blue-mid);font-weight:600;">
+                Enviar consulta online →
+              </a>
+            </div>
+
+          </aside>
+        </div><!-- /branch-layout -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══════════════════════════════ FOOTER ══ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">gri<span class="accent">do</span></a>
+          <p>La cadena de heladerías más popular de Argentina. Más de 1700 sucursales para que el sabor siempre esté cerca tuyo.</p>
+        </div>
+        <nav class="footer-col" aria-label="Productos">
+          <h4>Productos</h4>
+          <ul>
+            <li><a href="productos.html">Familiares</a></li>
+            <li><a href="productos.html">Copas</a></li>
+            <li><a href="productos.html">Postres</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-col" aria-label="Empresa">
+          <h4>Empresa</h4>
+          <ul>
+            <li><a href="#">Sobre Grido</a></li>
+            <li><a href="sucursales.html">Sucursales</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-col" aria-label="Legal">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#">Privacidad</a></li>
+            <li><a href="#">Términos</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Grido S.A. Todos los derechos reservados.</span>
+        <span class="seo-note">Proyecto académico – Seminario de Big Data</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    /* ── Filtro de sucursales por provincia ───────────── */
+    const provinceBtns = document.querySelectorAll('[data-province]');
+    const branchCards  = document.querySelectorAll('.branch-card[data-province]');
+
+    provinceBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        provinceBtns.forEach(b => {
+          b.classList.remove('active');
+          b.setAttribute('aria-selected', 'false');
+        });
+        btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
+
+        const prov = btn.dataset.province;
+        branchCards.forEach(card => {
+          const show = prov === 'all' || card.dataset.province === prov;
+          card.style.display = show ? '' : 'none';
+        });
+      });
+    });
+
+    /* ── Búsqueda por texto ───────────────────────────── */
+    function filterBranches() {
+      const q = document.getElementById('branchSearch').value.trim().toLowerCase();
+      if (!q) {
+        branchCards.forEach(c => c.style.display = '');
+        return;
+      }
+      branchCards.forEach(card => {
+        const text = card.textContent.toLowerCase();
+        card.style.display = text.includes(q) ? '' : 'none';
+      });
+    }
+
+    document.getElementById('branchSearch').addEventListener('keydown', e => {
+      if (e.key === 'Enter') filterBranches();
+    });
+  </script>
+</body>
+</html>

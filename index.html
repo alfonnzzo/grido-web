@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- ═══════════════════════════════════════════════════════
+       SEO TÉCNICO — META TAGS
+       • charset y viewport son obligatorios para móvil
+       • description es el texto que muestra Google bajo el título
+       • keywords ya no pesa en rankings pero documenta intención
+       • robots: le indica a los crawlers que indexen esta página
+  ════════════════════════════════════════════════════════════ -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Grido Helados – la cadena de heladerías más popular de Argentina. Helados familiares, copas, postres y sabores irresistibles al mejor precio. Encontrá tu sucursal más cercana.">
+  <meta name="keywords" content="Grido, helados, heladería, helados familiares, helados Argentina, Formosa, postres, sabores de helado">
+  <meta name="author" content="Grido S.A.">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph – mejora la vista previa en redes sociales -->
+  <meta property="og:type"        content="website">
+  <meta property="og:title"       content="Grido Helados | El sabor que más te gusta">
+  <meta property="og:description" content="Helados familiares, copas y postres al mejor precio. Más de 1700 sucursales en toda Argentina.">
+  <meta property="og:url"         content="https://www.grido.com.ar/">
+  <meta property="og:locale"      content="es_AR">
+  <meta property="og:site_name"   content="Grido Helados">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Grido Helados | El sabor que más te gusta">
+  <meta name="twitter:description" content="Helados familiares, copas y postres al mejor precio.">
+
+  <!-- Canonical – evita contenido duplicado -->
+  <link rel="canonical" href="https://www.grido.com.ar/">
+
+  <!-- Google Fonts – tipografía de marca -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- ═══════════════════════════════════════════════════════
+       DATOS ESTRUCTURADOS (JSON-LD)
+       Google usa esto para mostrar información enriquecida
+       en los resultados de búsqueda (rich snippets).
+  ════════════════════════════════════════════════════════════ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FoodEstablishment",
+    "name": "Grido Helados",
+    "url": "https://www.grido.com.ar",
+    "logo": "https://www.grido.com.ar/img/logo.png",
+    "description": "Cadena argentina de heladerías fundada en el año 2000. Más de 1700 sucursales en Argentina y Latinoamérica.",
+    "servesCuisine": "Ice Cream",
+    "priceRange": "$",
+    "telephone": "+54-11-5000-0000",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "AR"
+    },
+    "sameAs": [
+      "https://www.instagram.com/gridohelados",
+      "https://www.facebook.com/gridohelados"
+    ]
+  }
+  </script>
+
+  <title>Grido Helados | El sabor que más te gusta, al precio que más te conviene</title>
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════════════════
+       NAVBAR — Navegación principal
+       role="navigation" + aria-label = accesibilidad + SEO
+  ═══════════════════════════════════════════════════════════ -->
+  <header>
+    <nav class="navbar" role="navigation" aria-label="Navegación principal">
+      <div class="nav-inner">
+        <a href="index.html" class="nav-logo" aria-label="Grido - ir al inicio">
+          gri<span class="accent">do</span>
+        </a>
+
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html"       class="active">Inicio</a></li>
+          <li><a href="productos.html">Productos</a></li>
+          <li><a href="promociones.html">Promociones</a></li>
+          <li><a href="sucursales.html">Sucursales</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="promociones.html" class="nav-promo">🍦 Ofertas</a></li>
+        </ul>
+
+        <button class="hamburger" id="hamburger"
+                aria-label="Abrir menú" aria-expanded="false"
+                aria-controls="navLinks">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ══════════════════════════════════════════════════════
+       HERO — Sección principal con propuesta de valor
+       h1 contiene la keyword principal: "helados"
+  ═══════════════════════════════════════════════════════════ -->
+  <main id="main-content">
+    <section class="hero" aria-label="Sección principal">
+      <div class="container">
+        <div class="hero-inner">
+
+          <!-- Texto -->
+          <div class="hero-text">
+            <span class="hero-tag">🇦🇷 Desde el año 2000</span>
+            <h1>El sabor que más<br>te gusta, al precio<br>que más <em>te conviene</em></h1>
+            <p class="hero-desc">
+              Más de 1700 sucursales en Argentina y Latinoamérica te traen
+              helados familiares, copas y postres irresistibles. La heladería
+              del barrio que siempre está cerca.
+            </p>
+            <div class="hero-actions">
+              <a href="productos.html" class="btn btn-primary">Ver productos</a>
+              <a href="sucursales.html" class="btn btn-ghost">📍 Sucursales</a>
+            </div>
+            <div class="hero-stats">
+              <div>
+                <div class="stat-num">+1700</div>
+                <div class="stat-label">Sucursales</div>
+              </div>
+              <div>
+                <div class="stat-num">25+</div>
+                <div class="stat-label">Años de historia</div>
+              </div>
+              <div>
+                <div class="stat-num">50+</div>
+                <div class="stat-label">Sabores</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Visual — SVG Ice Cream (elemento signature del diseño) -->
+          <div class="hero-visual" aria-hidden="true">
+            <svg class="hero-svg" viewBox="0 0 240 370" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <radialGradient id="g-straw" cx="38%" cy="32%" r="60%">
+                  <stop offset="0%"   stop-color="#FFE8F0"/>
+                  <stop offset="100%" stop-color="#FF6B95" stop-opacity="0.4"/>
+                </radialGradient>
+                <radialGradient id="g-van" cx="38%" cy="32%" r="60%">
+                  <stop offset="0%"   stop-color="#FFFDE0"/>
+                  <stop offset="100%" stop-color="#E8C840" stop-opacity="0.35"/>
+                </radialGradient>
+                <radialGradient id="g-choc" cx="38%" cy="32%" r="60%">
+                  <stop offset="0%"   stop-color="#E8C09A"/>
+                  <stop offset="100%" stop-color="#7A3A14" stop-opacity="0.4"/>
+                </radialGradient>
+                <radialGradient id="g-cherry" cx="32%" cy="28%" r="65%">
+                  <stop offset="0%"   stop-color="#FF7070"/>
+                  <stop offset="100%" stop-color="#B80020"/>
+                </radialGradient>
+              </defs>
+
+              <!-- Cono -->
+              <polygon points="120,355 56,220 184,220" fill="#E8A84A"/>
+              <!-- Cuadrícula del cono (waffle pattern) -->
+              <line x1="72"  y1="222" x2="120" y2="355" stroke="#B87820" stroke-width="1.5" opacity="0.45"/>
+              <line x1="96"  y1="220" x2="123" y2="355" stroke="#B87820" stroke-width="1.5" opacity="0.45"/>
+              <line x1="120" y1="220" x2="126" y2="355" stroke="#B87820" stroke-width="1.5" opacity="0.45"/>
+              <line x1="144" y1="220" x2="120" y2="355" stroke="#B87820" stroke-width="1.5" opacity="0.45"/>
+              <line x1="168" y1="222" x2="115" y2="355" stroke="#B87820" stroke-width="1.5" opacity="0.45"/>
+              <path d="M 65 240 Q 120 228 175 240" stroke="#B87820" stroke-width="1.5" fill="none" opacity="0.45"/>
+              <path d="M 75 262 Q 120 248 165 262" stroke="#B87820" stroke-width="1.5" fill="none" opacity="0.45"/>
+              <path d="M 87 287 Q 120 272 153 287" stroke="#B87820" stroke-width="1.5" fill="none" opacity="0.45"/>
+              <path d="M 100 314 Q 120 300 140 314" stroke="#B87820" stroke-width="1.5" fill="none" opacity="0.45"/>
+
+              <!-- Bocha fresa (abajo) -->
+              <circle cx="120" cy="180" r="58" fill="#FFB3C6"/>
+              <circle cx="120" cy="180" r="58" fill="url(#g-straw)"/>
+
+              <!-- Bocha vainilla (medio) -->
+              <circle cx="120" cy="122" r="52" fill="#FFF9D0"/>
+              <circle cx="120" cy="122" r="52" fill="url(#g-van)"/>
+
+              <!-- Bocha chocolate (arriba) -->
+              <circle cx="120" cy="70"  r="46" fill="#C87A3A"/>
+              <circle cx="120" cy="70"  r="46" fill="url(#g-choc)"/>
+
+              <!-- Goteo de vainilla -->
+              <path d="M 152 130 Q 162 150 157 168" stroke="#FFE840" stroke-width="5" fill="none"
+                    stroke-linecap="round" opacity="0.8"/>
+
+              <!-- Cereza -->
+              <circle cx="120" cy="26" r="14" fill="url(#g-cherry)"/>
+              <circle cx="120" cy="26" r="14" fill="url(#g-cherry)"/>
+              <path d="M 120 14 Q 130 4 140 10" stroke="#2A8A2A" stroke-width="2.5"
+                    fill="none" stroke-linecap="round"/>
+              <circle cx="140" cy="10" r="4" fill="#2A8A2A"/>
+
+              <!-- Destello de brillo -->
+              <circle cx="100" cy="60" r="8" fill="white" opacity="0.35"/>
+              <circle cx="100" cy="115" r="7" fill="white" opacity="0.3"/>
+              <circle cx="105" cy="168" r="9" fill="white" opacity="0.25"/>
+            </svg>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         BANNER PUBLICITARIO — Promoción de verano
+         Elemento publicitario clave con countdown dinámico
+    ═══════════════════════════════════════════════════════════ -->
+    <section aria-label="Promoción de verano" style="padding-top:0;">
+      <div class="container">
+        <article class="promo-banner" itemscope itemtype="https://schema.org/Offer">
+          <div>
+            <span class="promo-badge">⏰ Oferta de temporada</span>
+            <h2 class="promo-title" itemprop="name">
+              Helados Familiares<br>2x1 todos los martes
+            </h2>
+            <p class="promo-desc" itemprop="description">
+              Llevá 2 helados familiares y pagá solo 1. Válido en todas las sucursales.
+            </p>
+            <div class="countdown" id="countdown-hero" aria-label="Tiempo restante de la oferta">
+              <div class="cd-unit"><span class="cd-num" data-days="00">00</span><span class="cd-label">días</span></div>
+              <div class="cd-unit"><span class="cd-num" data-hours="00">00</span><span class="cd-label">horas</span></div>
+              <div class="cd-unit"><span class="cd-num" data-mins="00">00</span><span class="cd-label">mins</span></div>
+              <div class="cd-unit"><span class="cd-num" data-secs="00">00</span><span class="cd-label">segs</span></div>
+            </div>
+          </div>
+          <a href="promociones.html" class="btn btn-white">Ver todas las promos →</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         FEATURES — Por qué elegir Grido
+         Semántica: section > article mejora el SEO on-page
+    ═══════════════════════════════════════════════════════════ -->
+    <section class="bg-ice" aria-label="Características de Grido">
+      <div class="container">
+        <span class="section-eyebrow">Por qué elegir Grido</span>
+        <h2 class="section-title">Calidad, variedad<br>y el mejor precio</h2>
+        <p class="section-sub">
+          Desde el año 2000 llevamos alegría y frescura a millones de familias
+          argentinas con productos de primera calidad.
+        </p>
+        <div class="features-grid">
+          <article class="feature reveal">
+            <span class="feature-icon">💰</span>
+            <h3 class="feature-title">Precio accesible</h3>
+            <p class="feature-desc">
+              Los precios más competitivos del mercado sin resignar calidad.
+              Helados para toda la familia, sin que el bolsillo sufra.
+            </p>
+          </article>
+          <article class="feature reveal">
+            <span class="feature-icon">🍨</span>
+            <h3 class="feature-title">Más de 50 sabores</h3>
+            <p class="feature-desc">
+              Clásicos de siempre y sabores de temporada. Renovamos nuestra
+              carta para que siempre encuentres algo nuevo que descubrir.
+            </p>
+          </article>
+          <article class="feature reveal">
+            <span class="feature-icon">📍</span>
+            <h3 class="feature-title">Siempre cerca tuyo</h3>
+            <p class="feature-desc">
+              Más de 1700 sucursales en todo el país. Encontrá la heladería
+              más cercana con nuestro buscador de sucursales.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         PRODUCTOS DESTACADOS
+         itemscope/itemtype para rich snippets de producto
+    ═══════════════════════════════════════════════════════════ -->
+    <section aria-label="Productos destacados">
+      <div class="container">
+        <span class="section-eyebrow">Lo más pedido</span>
+        <h2 class="section-title">Productos estrella</h2>
+        <p class="section-sub">
+          Nuestros productos más elegidos por los clientes, ahora con
+          promociones exclusivas de temporada.
+        </p>
+
+        <div class="card-grid">
+
+          <article class="card reveal" data-cat="familiar"
+                   itemscope itemtype="https://schema.org/Product">
+            <div class="card-thumb bg-1">
+              <span role="img" aria-label="Helado familiar de frutilla">🍓</span>
+              <span class="card-badge">⭐ Más vendido</span>
+            </div>
+            <div class="card-body">
+              <p class="card-tag">Familiar</p>
+              <h3 class="card-title" itemprop="name">Familiar Frutilla</h3>
+              <p class="card-desc" itemprop="description">
+                1 kg de puro sabor a frutilla natural. Ideal para compartir
+                en familia después del almuerzo.
+              </p>
+              <div class="card-footer">
+                <span class="card-price" itemprop="price"><sub>$</sub> 2.890</span>
+                <a href="productos.html" class="btn btn-blue" style="padding:0.45rem 1rem;font-size:0.82rem;">
+                  Ver más
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card reveal" data-cat="copa"
+                   itemscope itemtype="https://schema.org/Product">
+            <div class="card-thumb bg-4">
+              <span role="img" aria-label="Copa mixta de helado">🍧</span>
+            </div>
+            <div class="card-body">
+              <p class="card-tag">Copa</p>
+              <h3 class="card-title" itemprop="name">Copa Mixta</h3>
+              <p class="card-desc" itemprop="description">
+                3 bochas a elección con toppings de granola, salsa de
+                chocolate y crema chantilly.
+              </p>
+              <div class="card-footer">
+                <span class="card-price"><sub>$</sub> 1.450</span>
+                <a href="productos.html" class="btn btn-blue" style="padding:0.45rem 1rem;font-size:0.82rem;">
+                  Ver más
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card reveal" data-cat="familiar"
+                   itemscope itemtype="https://schema.org/Product">
+            <div class="card-thumb bg-2">
+              <span role="img" aria-label="Helado familiar de dulce de leche">🍮</span>
+              <span class="card-badge">🔥 Promo</span>
+            </div>
+            <div class="card-body">
+              <p class="card-tag">Familiar</p>
+              <h3 class="card-title" itemprop="name">Familiar Dulce de Leche</h3>
+              <p class="card-desc" itemprop="description">
+                El sabor preferido de los argentinos en 1 kg. Cremoso,
+                intenso y con trocitos de alfajor.
+              </p>
+              <div class="card-footer">
+                <span class="card-price"><sub>$</sub> 2.890</span>
+                <a href="productos.html" class="btn btn-blue" style="padding:0.45rem 1rem;font-size:0.82rem;">
+                  Ver más
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <div style="text-align:center; margin-top:2.5rem;">
+          <a href="productos.html" class="btn btn-outline">Ver todos los productos →</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══════════════════════════════════════════════════════
+       FOOTER — Semántico con role="contentinfo"
+  ═══════════════════════════════════════════════════════════ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">gri<span class="accent">do</span></a>
+          <p>La cadena de heladerías más popular de Argentina. Más de 1700 sucursales para que el sabor siempre esté cerca tuyo.</p>
+        </div>
+        <nav class="footer-col" aria-label="Productos">
+          <h4>Productos</h4>
+          <ul>
+            <li><a href="productos.html">Helados Familiares</a></li>
+            <li><a href="productos.html">Copas y Vasitos</a></li>
+            <li><a href="productos.html">Postres</a></li>
+            <li><a href="productos.html">Especialidades</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-col" aria-label="Empresa">
+          <h4>Empresa</h4>
+          <ul>
+            <li><a href="#">Sobre Grido</a></li>
+            <li><a href="#">Franquicias</a></li>
+            <li><a href="sucursales.html">Sucursales</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-col" aria-label="Legal">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#">Política de privacidad</a></li>
+            <li><a href="#">Términos de uso</a></li>
+            <li><a href="#">Cookies</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Grido S.A. Todos los derechos reservados.</span>
+        <span class="seo-note">Proyecto académico – Seminario de Big Data</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

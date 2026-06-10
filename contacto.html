@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contacto Grido Helados. Envianos tu consulta, sugerencia o reclamo. También podés comunicarte por WhatsApp, email o redes sociales. Respondemos en menos de 24 horas.">
+  <meta name="keywords" content="contacto Grido, atención al cliente Grido, consultas heladería, franquicia Grido, email Grido Argentina">
+  <meta name="author" content="Grido S.A.">
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:type"        content="website">
+  <meta property="og:title"       content="Contacto | Grido Helados">
+  <meta property="og:description" content="Contactá a Grido por consultas, sugerencias o franquicias. Respondemos en 24 hs.">
+  <meta property="og:url"         content="https://www.grido.com.ar/contacto.html">
+  <meta property="og:locale"      content="es_AR">
+
+  <link rel="canonical" href="https://www.grido.com.ar/contacto.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Datos estructurados: contacto -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contacto – Grido Helados",
+    "url": "https://www.grido.com.ar/contacto.html",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "Grido S.A.",
+      "email": "contacto@grido.com.ar",
+      "telephone": "+54-800-555-4743",
+      "sameAs": [
+        "https://www.instagram.com/gridohelados",
+        "https://www.facebook.com/gridohelados"
+      ],
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "contactType": "customer support",
+          "telephone": "+54-800-555-4743",
+          "availableLanguage": "Spanish",
+          "areaServed": "AR"
+        },
+        {
+          "@type": "ContactPoint",
+          "contactType": "sales",
+          "email": "franquicias@grido.com.ar",
+          "availableLanguage": "Spanish"
+        }
+      ]
+    }
+  }
+  </script>
+
+  <title>Contacto | Grido Helados</title>
+
+  <style>
+    /* ── Estilos específicos de Contacto ────────────── */
+
+    /* FAQ accordion */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+    }
+    .faq-item {
+      background: var(--white);
+      border: 1.5px solid var(--mist);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+    .faq-item:hover { border-color: var(--blue-mid); }
+
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 1rem 1.3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      font-family: var(--font-body);
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--navy);
+      cursor: pointer;
+      text-align: left;
+    }
+    .faq-question .arrow {
+      font-size: 1rem;
+      transition: transform 0.25s;
+      flex-shrink: 0;
+      color: var(--blue-mid);
+    }
+    .faq-item.open .faq-question .arrow { transform: rotate(180deg); }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+      padding: 0 1.3rem;
+      font-size: 0.86rem;
+      color: var(--gray);
+      line-height: 1.65;
+    }
+    .faq-item.open .faq-answer {
+      max-height: 200px;
+      padding: 0 1.3rem 1rem;
+    }
+
+    /* WhatsApp CTA flotante */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 1.8rem;
+      right: 1.8rem;
+      background: #25D366;
+      color: white;
+      border-radius: 50px;
+      padding: 0.7rem 1.2rem;
+      font-weight: 700;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      box-shadow: 0 6px 24px rgba(37,211,102,0.35);
+      z-index: 500;
+      transition: transform 0.2s, box-shadow 0.2s;
+      text-decoration: none;
+    }
+    .whatsapp-float:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 32px rgba(37,211,102,0.4);
+    }
+    .whatsapp-float .wa-icon { font-size: 1.2rem; }
+
+    /* Canales de contacto */
+    .channels-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.2rem;
+      margin-bottom: 3rem;
+    }
+    .channel-card {
+      background: var(--white);
+      border: 1.5px solid var(--mist);
+      border-radius: var(--radius);
+      padding: 1.6rem 1.4rem;
+      text-align: center;
+      box-shadow: var(--shadow);
+      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    }
+    .channel-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--blue-mid);
+    }
+    .channel-icon {
+      font-size: 2rem;
+      margin-bottom: 0.7rem;
+      display: block;
+    }
+    .channel-title {
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 0.3rem;
+    }
+    .channel-desc {
+      font-size: 0.8rem;
+      color: var(--gray);
+      line-height: 1.5;
+      margin-bottom: 0.7rem;
+    }
+    .channel-link {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--blue-mid);
+    }
+    .channel-link:hover { text-decoration: underline; }
+
+    @media (max-width: 720px) {
+      .channels-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 480px) {
+      .channels-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══════════════════════════════ NAVBAR ══ -->
+  <header>
+    <nav class="navbar" role="navigation" aria-label="Navegación principal">
+      <div class="nav-inner">
+        <a href="index.html" class="nav-logo" aria-label="Grido - ir al inicio">
+          gri<span class="accent">do</span>
+        </a>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="productos.html">Productos</a></li>
+          <li><a href="promociones.html">Promociones</a></li>
+          <li><a href="sucursales.html">Sucursales</a></li>
+          <li><a href="contacto.html" class="active">Contacto</a></li>
+          <li><a href="promociones.html" class="nav-promo">🍦 Ofertas</a></li>
+        </ul>
+        <button class="hamburger" id="hamburger"
+                aria-label="Abrir menú" aria-expanded="false"
+                aria-controls="navLinks">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+    <!-- PAGE HERO -->
+    <section class="page-hero" aria-label="Encabezado de contacto">
+      <span class="bg-icon" aria-hidden="true">✉️</span>
+      <div class="container">
+        <nav aria-label="Breadcrumb">
+          <ol style="display:flex;gap:0.5rem;justify-content:center;font-size:0.8rem;opacity:0.65;list-style:none;margin-bottom:0.75rem;">
+            <li><a href="index.html" style="color:white;">Inicio</a></li>
+            <li aria-hidden="true">/</li>
+            <li aria-current="page">Contacto</li>
+          </ol>
+        </nav>
+        <h1>¿En qué podemos ayudarte?</h1>
+        <p>
+          Estamos para escucharte. Consultas, sugerencias, reclamos
+          o información sobre franquicias: respondemos en menos de 24 horas.
+        </p>
+      </div>
+    </section>
+
+    <!-- CANALES DE CONTACTO -->
+    <section aria-label="Canales de atención">
+      <div class="container">
+        <span class="section-eyebrow">Elegí cómo contactarnos</span>
+        <h2 class="section-title">Múltiples canales de atención</h2>
+        <p class="section-sub">
+          Todos los canales son monitoreados de lunes a viernes de 9 a 18 hs
+          y los fines de semana de 10 a 16 hs.
+        </p>
+
+        <div class="channels-grid">
+          <div class="channel-card reveal">
+            <span class="channel-icon" aria-hidden="true">📞</span>
+            <h3 class="channel-title">Línea gratuita</h3>
+            <p class="channel-desc">Atención telefónica directa sin cargo desde todo el país.</p>
+            <a href="tel:08005554743" class="channel-link">0800-555-GRIDO</a>
+          </div>
+          <div class="channel-card reveal">
+            <span class="channel-icon" aria-hidden="true">💬</span>
+            <h3 class="channel-title">WhatsApp</h3>
+            <p class="channel-desc">Respondemos en minutos durante el horario de atención.</p>
+            <a href="https://wa.me/5491150000000" class="channel-link" target="_blank" rel="noopener">Escribirnos ahora</a>
+          </div>
+          <div class="channel-card reveal">
+            <span class="channel-icon" aria-hidden="true">📧</span>
+            <h3 class="channel-title">Email</h3>
+            <p class="channel-desc">Para consultas detalladas. Respondemos en menos de 24 hs.</p>
+            <a href="mailto:contacto@grido.com.ar" class="channel-link">contacto@grido.com.ar</a>
+          </div>
+          <div class="channel-card reveal">
+            <span class="channel-icon" aria-hidden="true">📸</span>
+            <h3 class="channel-title">Instagram</h3>
+            <p class="channel-desc">Seguinos y mandanos un DM para consultas rápidas.</p>
+            <a href="https://instagram.com/gridohelados" class="channel-link" target="_blank" rel="noopener">@gridohelados</a>
+          </div>
+          <div class="channel-card reveal">
+            <span class="channel-icon" aria-hidden="true">👥</span>
+            <h3 class="channel-title">Facebook</h3>
+            <p class="channel-desc">Mensajes directos y comentarios con respuesta garantizada.</p>
+            <a href="https://facebook.com/gridohelados" class="channel-link" target="_blank" rel="noopener">fb.com/gridohelados</a>
+          </div>
+          <div class="channel-card reveal">
+            <span class="channel-icon" aria-hidden="true">🏪</span>
+            <h3 class="channel-title">Franquicias</h3>
+            <p class="channel-desc">¿Querés abrir tu Grido? Te explicamos cómo.</p>
+            <a href="mailto:franquicias@grido.com.ar" class="channel-link">franquicias@grido.com.ar</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FORMULARIO + INFO -->
+    <section class="bg-ice" aria-label="Formulario de contacto e información">
+      <div class="container">
+        <div class="contact-grid">
+
+          <!-- Info lateral -->
+          <div class="contact-info reveal">
+            <h2>Escribinos directamente</h2>
+            <p>
+              Completá el formulario y te respondemos a la brevedad.
+              Todos los campos son obligatorios.
+            </p>
+
+            <div class="contact-item" itemscope itemtype="https://schema.org/ContactPoint">
+              <div class="c-icon" aria-hidden="true">📞</div>
+              <div class="c-text">
+                <strong>Línea gratuita</strong>
+                <span itemprop="telephone">0800-555-GRIDO (47436)</span>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="c-icon" aria-hidden="true">📧</div>
+              <div class="c-text">
+                <strong>Email</strong>
+                <span itemprop="email">contacto@grido.com.ar</span>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="c-icon" aria-hidden="true">🕐</div>
+              <div class="c-text">
+                <strong>Horario de atención</strong>
+                <span>Lun–Vie 9–18 hs · Sáb–Dom 10–16 hs</span>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="c-icon" aria-hidden="true">📍</div>
+              <div class="c-text">
+                <strong>Casa central</strong>
+                <span>Córdoba, Argentina</span>
+              </div>
+            </div>
+
+            <p style="font-size:0.85rem;font-weight:700;color:var(--navy);margin-top:1.5rem;margin-bottom:0.7rem;">
+              Seguinos en redes
+            </p>
+            <div class="social-links" aria-label="Redes sociales de Grido">
+              <a href="https://instagram.com/gridohelados" class="social-btn" target="_blank"
+                 rel="noopener" aria-label="Instagram de Grido">📸</a>
+              <a href="https://facebook.com/gridohelados" class="social-btn" target="_blank"
+                 rel="noopener" aria-label="Facebook de Grido">👥</a>
+              <a href="https://wa.me/5491150000000" class="social-btn" target="_blank"
+                 rel="noopener" aria-label="WhatsApp de Grido">💬</a>
+              <a href="https://twitter.com/gridohelados" class="social-btn" target="_blank"
+                 rel="noopener" aria-label="Twitter de Grido">🐦</a>
+            </div>
+
+            <!-- Banner publicitario lateral (Punto 13) -->
+            <div style="margin-top:2rem;background:linear-gradient(130deg,var(--orange),#FF9500);
+                        border-radius:var(--radius);padding:1.5rem;color:white;text-align:center;">
+              <div style="font-size:2rem;margin-bottom:0.4rem;">🍦</div>
+              <strong style="font-family:var(--font-display);font-size:1rem;display:block;margin-bottom:0.3rem;">
+                2x1 los martes
+              </strong>
+              <p style="font-size:0.8rem;opacity:0.9;margin-bottom:0.8rem;line-height:1.5;">
+                En todas las sucursales. Helados familiares.
+              </p>
+              <a href="promociones.html" class="btn btn-white" style="font-size:0.82rem;padding:0.5rem 1.2rem;">
+                Ver promo
+              </a>
+            </div>
+          </div>
+
+          <!-- Formulario principal -->
+          <div class="form-card reveal">
+            <h3>Envianos tu consulta</h3>
+            <form id="contactForm" novalidate aria-label="Formulario de contacto">
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="fname">Nombre</label>
+                  <input type="text" id="fname" name="fname"
+                         placeholder="Tu nombre" required autocomplete="given-name"
+                         aria-required="true">
+                </div>
+                <div class="form-group">
+                  <label for="lname">Apellido</label>
+                  <input type="text" id="lname" name="lname"
+                         placeholder="Tu apellido" required autocomplete="family-name"
+                         aria-required="true">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email"
+                       placeholder="tu@email.com" required autocomplete="email"
+                       aria-required="true">
+              </div>
+
+              <div class="form-group">
+                <label for="phone">Teléfono (opcional)</label>
+                <input type="tel" id="phone" name="phone"
+                       placeholder="+54 11 1234-5678" autocomplete="tel">
+              </div>
+
+              <div class="form-group">
+                <label for="subject">Motivo de consulta</label>
+                <select id="subject" name="subject" required aria-required="true">
+                  <option value="" disabled selected>Seleccioná un motivo…</option>
+                  <option value="consulta">Consulta general</option>
+                  <option value="promo">Información sobre promociones</option>
+                  <option value="reclamo">Reclamo o sugerencia</option>
+                  <option value="franquicia">Franquicias</option>
+                  <option value="prensa">Prensa y medios</option>
+                  <option value="otro">Otro</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Mensaje</label>
+                <textarea id="message" name="message"
+                          placeholder="Contanos en qué podemos ayudarte…"
+                          required aria-required="true"></textarea>
+              </div>
+
+              <!-- Consentimiento de datos (GDPR/privacidad) -->
+              <div class="form-group" style="display:flex;align-items:flex-start;gap:0.6rem;">
+                <input type="checkbox" id="privacy" name="privacy" required
+                       style="width:auto;margin-top:3px;flex-shrink:0;"
+                       aria-required="true">
+                <label for="privacy" style="font-size:0.8rem;color:var(--gray);font-weight:400;cursor:pointer;">
+                  Acepto la
+                  <a href="#" style="color:var(--blue-mid);">política de privacidad</a>
+                  y autorizo el tratamiento de mis datos para responder a mi consulta.
+                </label>
+              </div>
+
+              <button type="submit" class="btn btn-blue btn-full" style="margin-top:0.5rem;">
+                Enviar mensaje
+              </button>
+
+              <div id="success-msg" role="alert" aria-live="polite">
+                ✅ ¡Mensaje enviado! Te respondemos en menos de 24 horas.
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section aria-label="Preguntas frecuentes">
+      <div class="container">
+        <span class="section-eyebrow">FAQ</span>
+        <h2 class="section-title">Preguntas frecuentes</h2>
+        <p class="section-sub">
+          Las dudas más comunes de nuestros clientes, resueltas al instante.
+        </p>
+
+        <div class="faq-list" style="max-width:780px;">
+
+          <div class="faq-item reveal">
+            <button class="faq-question" aria-expanded="false">
+              ¿Cómo puedo encontrar la sucursal Grido más cercana?
+              <span class="arrow" aria-hidden="true">▼</span>
+            </button>
+            <div class="faq-answer">
+              Visitá la sección <a href="sucursales.html" style="color:var(--blue-mid);font-weight:600;">Sucursales</a>
+              de nuestra web, ingresá tu ciudad o barrio y el buscador te mostrará las
+              heladerías disponibles con su dirección y horario.
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-question" aria-expanded="false">
+              ¿Cómo funciona la promo 2x1 de los martes?
+              <span class="arrow" aria-hidden="true">▼</span>
+            </button>
+            <div class="faq-answer">
+              Todos los martes, al comprar dos helados familiares de cualquier sabor, solo
+              abonás el precio de uno. No necesitás cupón ni registración previa. Válida en
+              todas las sucursales adheridas al programa. Consultá disponibilidad en tu local.
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-question" aria-expanded="false">
+              ¿Cómo me sumo al programa Grido Club?
+              <span class="arrow" aria-hidden="true">▼</span>
+            </button>
+            <div class="faq-answer">
+              Completá el formulario de esta página seleccionando "Consulta general" y mencionando
+              que querés registrarte en Grido Club. Un representante te enviará los pasos a seguir
+              en menos de 24 horas.
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-question" aria-expanded="false">
+              ¿Cómo puedo abrir una franquicia Grido?
+              <span class="arrow" aria-hidden="true">▼</span>
+            </button>
+            <div class="faq-answer">
+              Escribinos a <strong>franquicias@grido.com.ar</strong> o usá el formulario
+              seleccionando "Franquicias". Nuestro equipo te enviará el kit informativo con
+              requisitos de inversión, rentabilidad estimada y el proceso de habilitación.
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-question" aria-expanded="false">
+              ¿En cuánto tiempo recibo una respuesta?
+              <span class="arrow" aria-hidden="true">▼</span>
+            </button>
+            <div class="faq-answer">
+              Respondemos todos los mensajes en un plazo máximo de 24 horas hábiles.
+              Para urgencias, utilizá nuestra línea gratuita 0800-555-GRIDO o el WhatsApp,
+              donde el tiempo de respuesta es de pocos minutos durante el horario de atención.
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- WhatsApp flotante (elemento publicitario — Punto 13) -->
+  <a href="https://wa.me/5491150000000"
+     class="whatsapp-float"
+     target="_blank"
+     rel="noopener"
+     aria-label="Contactar por WhatsApp">
+    <span class="wa-icon" aria-hidden="true">💬</span>
+    WhatsApp
+  </a>
+
+  <!-- ══════════════════════════════ FOOTER ══ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">gri<span class="accent">do</span></a>
+          <p>La cadena de heladerías más popular de Argentina. Más de 1700 sucursales para que el sabor siempre esté cerca tuyo.</p>
+        </div>
+        <nav class="footer-col" aria-label="Productos">
+          <h4>Productos</h4>
+          <ul>
+            <li><a href="productos.html">Familiares</a></li>
+            <li><a href="productos.html">Copas</a></li>
+            <li><a href="productos.html">Postres</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-col" aria-label="Empresa">
+          <h4>Empresa</h4>
+          <ul>
+            <li><a href="#">Sobre Grido</a></li>
+            <li><a href="sucursales.html">Sucursales</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-col" aria-label="Legal">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#">Privacidad</a></li>
+            <li><a href="#">Términos</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Grido S.A. Todos los derechos reservados.</span>
+        <span class="seo-note">Proyecto académico – Seminario de Big Data</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    /* ── FAQ Accordion ───────────────────────────────── */
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+
+        // Cerrar todos
+        document.querySelectorAll('.faq-item').forEach(i => {
+          i.classList.remove('open');
+          i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+        });
+
+        // Abrir el clickeado si estaba cerrado
+        if (!isOpen) {
+          item.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

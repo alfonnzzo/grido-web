@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Promociones y ofertas de Grido Helados. Descuentos en helados familiares, 2x1, cupones y beneficios exclusivos. ¡Aprovechá las mejores promos de la temporada!">
+  <meta name="keywords" content="promociones Grido, ofertas helados, descuentos heladería, 2x1 helados, cupones Grido Argentina">
+  <meta name="author" content="Grido S.A.">
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:type"        content="website">
+  <meta property="og:title"       content="Promociones | Grido Helados">
+  <meta property="og:description" content="Las mejores promos de la temporada: 2x1, descuentos y beneficios exclusivos en helados familiares.">
+  <meta property="og:url"         content="https://www.grido.com.ar/promociones.html">
+  <meta property="og:locale"      content="es_AR">
+
+  <link rel="canonical" href="https://www.grido.com.ar/promociones.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Datos estructurados: ofertas -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Promociones Grido Helados – Temporada Verano 2026",
+    "url": "https://www.grido.com.ar/promociones.html",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "2x1 Helados Familiares los martes" },
+      { "@type": "ListItem", "position": 2, "name": "30% OFF comprando online" },
+      { "@type": "ListItem", "position": 3, "name": "Copa de regalo en tu cumpleaños" },
+      { "@type": "ListItem", "position": 4, "name": "Pack Verano: 3 familiares al precio de 2" }
+    ]
+  }
+  </script>
+
+  <title>Promociones y Ofertas | Grido Helados</title>
+
+  <style>
+    /* ── Estilos específicos de Promociones ─────────── */
+    .promo-hero-countdown {
+      display: flex;
+      gap: 2.5rem;
+      align-items: flex-start;
+      margin-top: 1.2rem;
+    }
+    .promo-hero-countdown .countdown {
+      flex-shrink: 0;
+    }
+
+    /* Túnel de conversión visual */
+    .funnel-section {
+      background: var(--blue-deep);
+      color: var(--white);
+      padding: var(--section-v) 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .funnel-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 70% 50%, rgba(255,194,0,0.08) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .funnel-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 900;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+    .funnel-sub {
+      color: rgba(255,255,255,0.65);
+      font-size: 0.95rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .funnel-steps {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0;
+      position: relative;
+    }
+    /* Línea conectora */
+    .funnel-steps::before {
+      content: '';
+      position: absolute;
+      top: 28px;
+      left: calc(10% + 16px);
+      right: calc(10% + 16px);
+      height: 2px;
+      background: linear-gradient(90deg, var(--yellow), rgba(255,255,255,0.15));
+      z-index: 0;
+    }
+
+    .funnel-step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 0 0.5rem;
+      position: relative;
+      z-index: 1;
+    }
+    .funnel-dot {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+      flex-shrink: 0;
+      border: 3px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.07);
+      transition: transform 0.3s;
+    }
+    .funnel-step:hover .funnel-dot { transform: scale(1.12); }
+    .funnel-dot.active { background: var(--yellow); border-color: var(--yellow); }
+
+    .funnel-step-num {
+      font-family: var(--font-display);
+      font-size: 0.68rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--yellow);
+      margin-bottom: 0.3rem;
+    }
+    .funnel-step-name {
+      font-family: var(--font-display);
+      font-size: 0.92rem;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 0.3rem;
+    }
+    .funnel-step-desc {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.5;
+    }
+    .funnel-step-tag {
+      display: inline-block;
+      background: rgba(255,255,255,0.1);
+      font-size: 0.67rem;
+      padding: 0.18rem 0.55rem;
+      border-radius: 12px;
+      color: rgba(255,255,255,0.7);
+      margin-top: 0.4rem;
+    }
+
+    /* Email signup */
+    .email-strip {
+      background: linear-gradient(130deg, var(--yellow) 0%, #FFD740 100%);
+      padding: 3rem 0;
+    }
+    .email-strip-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .email-strip h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+      font-weight: 900;
+      color: var(--navy);
+      margin-bottom: 0.3rem;
+    }
+    .email-strip p {
+      color: rgba(8,15,42,0.65);
+      font-size: 0.9rem;
+    }
+    .email-form {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+    .email-form input[type="email"] {
+      padding: 0.72rem 1.2rem;
+      border-radius: 32px;
+      border: none;
+      font-size: 0.9rem;
+      min-width: 240px;
+      font-family: var(--font-body);
+      outline: none;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+    }
+    .email-form input[type="email"]:focus {
+      box-shadow: 0 0 0 3px rgba(0,61,160,0.18);
+    }
+    .email-form button {
+      background: var(--blue-deep);
+      color: var(--white);
+      border: none;
+      border-radius: 32px;
+      padding: 0.72rem 1.6rem;
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+      font-family: var(--font-body);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .email-form button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+    }
+
+    @media (max-width: 820px) {
+      .funnel-steps { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+      .funnel-steps::before { display: none; }
+      .email-strip-inner { flex-direction: column; text-align: center; }
+    }
+    @media (max-width: 480px) {
+      .funnel-steps { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══════════════════════════════ NAVBAR ══ -->
+  <header>
+    <nav class="navbar" role="navigation" aria-label="Navegación principal">
+      <div class="nav-inner">
+        <a href="index.html" class="nav-logo" aria-label="Grido - ir al inicio">
+          gri<span class="accent">do</span>
+        </a>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="productos.html">Productos</a></li>
+          <li><a href="promociones.html" class="active">Promociones</a></li>
+          <li><a href="sucursales.html">Sucursales</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="promociones.html" class="nav-promo">🍦 Ofertas</a></li>
+        </ul>
+        <button class="hamburger" id="hamburger"
+                aria-label="Abrir menú" aria-expanded="false"
+                aria-controls="navLinks">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ═══════════════════════════════════════
+         PAGE HERO
+    ════════════════════════════════════════════ -->
+    <section class="page-hero" aria-label="Encabezado de promociones">
+      <span class="bg-icon" aria-hidden="true">🏷️</span>
+      <div class="container">
+        <nav aria-label="Breadcrumb">
+          <ol style="display:flex;gap:0.5rem;justify-content:center;font-size:0.8rem;opacity:0.65;list-style:none;margin-bottom:0.75rem;">
+            <li><a href="index.html" style="color:white;">Inicio</a></li>
+            <li aria-hidden="true">/</li>
+            <li aria-current="page">Promociones</li>
+          </ol>
+        </nav>
+        <h1>Promociones de Temporada</h1>
+        <p>
+          Las mejores ofertas en helados familiares, copas y postres.
+          ¡Solo por tiempo limitado!
+        </p>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         BANNER DESTACADO — Oferta principal 2x1
+         Elemento publicitario principal (Punto 13)
+    ════════════════════════════════════════════ -->
+    <section aria-label="Oferta destacada" style="padding-top:0;">
+      <div class="container">
+        <article class="promo-banner reveal"
+                 itemscope itemtype="https://schema.org/Offer"
+                 aria-label="Promoción 2x1 Helados Familiares">
+          <div>
+            <span class="promo-badge">🔥 Oferta estrella de la temporada</span>
+            <h2 class="promo-title" itemprop="name">
+              2x1 en Helados Familiares<br>todos los martes
+            </h2>
+            <p class="promo-desc" itemprop="description">
+              Llevá 2 familiares de cualquier sabor y pagá solo 1. Válido en todas las sucursales de Argentina. Sin límite de unidades por visita.
+            </p>
+            <meta itemprop="priceCurrency" content="ARS">
+            <div id="countdown-promo1" class="countdown" aria-label="Tiempo restante de la oferta" style="margin-top:1rem;">
+              <div class="cd-unit"><span class="cd-num" data-days>00</span><span class="cd-label">días</span></div>
+              <div class="cd-unit"><span class="cd-num" data-hours>00</span><span class="cd-label">horas</span></div>
+              <div class="cd-unit"><span class="cd-num" data-mins>00</span><span class="cd-label">mins</span></div>
+              <div class="cd-unit"><span class="cd-num" data-secs>00</span><span class="cd-label">segs</span></div>
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:0.8rem;align-items:flex-start;">
+            <a href="sucursales.html" class="btn btn-white">📍 Encontrar sucursal</a>
+            <a href="contacto.html"  class="btn btn-ghost" style="font-size:0.85rem;">Consultar condiciones</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         GRILLA DE PROMOCIONES
+         Punto 7: Estrategias en etapa "Conversión"
+    ════════════════════════════════════════════ -->
+    <section aria-label="Todas las promociones">
+      <div class="container">
+        <span class="section-eyebrow">Ofertas vigentes</span>
+        <h2 class="section-title">Todas las promos</h2>
+        <p class="section-sub">
+          Combiná las ofertas para aprovechar al máximo. Promociones válidas
+          durante el período de verano 2026.
+        </p>
+
+        <div class="promo-grid">
+
+          <!-- Promo 1: 30% OFF online -->
+          <article class="promo-card reveal"
+                   itemscope itemtype="https://schema.org/Offer">
+            <div class="promo-card-head color-2">
+              <div class="discount">
+                <span>%</span>30
+              </div>
+              <h3 itemprop="name">OFF comprando online</h3>
+            </div>
+            <div class="promo-card-body">
+              <p itemprop="description">
+                Hacé tu pedido desde nuestra página web y obtené un 30% de descuento
+                en tu primera compra digital. Aplicable a toda la línea de familiares.
+              </p>
+              <div class="promo-validity">
+                📅 Válido hasta el 31 de agosto de 2026
+              </div>
+              <div id="countdown-promo2" class="countdown" style="margin-bottom:1rem;gap:0.4rem;">
+                <div class="cd-unit" style="min-width:40px;padding:0.3rem 0.5rem;background:var(--blue-light);">
+                  <span class="cd-num" data-days style="color:var(--blue-deep);font-size:1.1rem;">00</span>
+                  <span class="cd-label" style="color:var(--gray);">d</span>
+                </div>
+                <div class="cd-unit" style="min-width:40px;padding:0.3rem 0.5rem;background:var(--blue-light);">
+                  <span class="cd-num" data-hours style="color:var(--blue-deep);font-size:1.1rem;">00</span>
+                  <span class="cd-label" style="color:var(--gray);">h</span>
+                </div>
+                <div class="cd-unit" style="min-width:40px;padding:0.3rem 0.5rem;background:var(--blue-light);">
+                  <span class="cd-num" data-mins style="color:var(--blue-deep);font-size:1.1rem;">00</span>
+                  <span class="cd-label" style="color:var(--gray);">m</span>
+                </div>
+                <div class="cd-unit" style="min-width:40px;padding:0.3rem 0.5rem;background:var(--blue-light);">
+                  <span class="cd-num" data-secs style="color:var(--blue-deep);font-size:1.1rem;">00</span>
+                  <span class="cd-label" style="color:var(--gray);">s</span>
+                </div>
+              </div>
+              <a href="contacto.html" class="btn btn-blue btn-full">Quiero este descuento</a>
+            </div>
+          </article>
+
+          <!-- Promo 2: Regalo cumpleaños -->
+          <article class="promo-card reveal"
+                   itemscope itemtype="https://schema.org/Offer">
+            <div class="promo-card-head color-3">
+              <div class="discount" style="font-size:2.2rem;">🎂 Gift</div>
+              <h3 itemprop="name">Copa gratis en tu cumpleaños</h3>
+            </div>
+            <div class="promo-card-body">
+              <p itemprop="description">
+                Registrate en el programa Grido Club y el día de tu cumpleaños
+                recibís una copa mixta completamente gratis en cualquier sucursal.
+              </p>
+              <div class="promo-validity">
+                📅 Disponible todo el año · Solo socios Grido Club
+              </div>
+              <a href="contacto.html" class="btn btn-outline btn-full" style="margin-top:1rem;">Unirme a Grido Club</a>
+            </div>
+          </article>
+
+          <!-- Promo 3: Pack verano 3x2 -->
+          <article class="promo-card reveal"
+                   itemscope itemtype="https://schema.org/Offer">
+            <div class="promo-card-head color-4">
+              <div class="discount">3<span>x</span>2</div>
+              <h3 itemprop="name">Pack Verano Familiar</h3>
+            </div>
+            <div class="promo-card-body">
+              <p itemprop="description">
+                Llevate 3 helados familiares y pagá solo 2. La promo ideal para
+                stockearte para toda la semana. Combiná los sabores que quieras.
+              </p>
+              <div class="promo-validity">
+                📅 Válido hasta el 15 de septiembre de 2026
+              </div>
+              <div id="countdown-promo3" class="countdown" style="margin-bottom:1rem;gap:0.4rem;">
+                <div class="cd-unit" style="min-width:40px;padding:0.3rem 0.5rem;background:var(--blue-light);">
+                  <span class="cd-num" data-days style="color:var(--blue-deep);font-size:1.1rem;">00</span>
+                  <span class="cd-label" style="color:var(--gray);">d</span>
+                </div>
+                <div class="cd-unit" style="min-width:40px;padding:0.3rem 0.5rem;background:var(--blue-light);">
+                  <span class="cd-num" data-hours style="color:var(--blue-deep);font-size:1.1rem;">00</span>
+                  <span class="cd-label" style="color:var(--gray);">h</span>
+                </div>
+                <div class="cd-unit" style="min-width:40px;padding:0.3rem 0.5rem;background:var(--blue-light);">
+                  <span class="cd-num" data-mins style="color:var(--blue-deep);font-size:1.1rem;">00</span>
+                  <span class="cd-label" style="color:var(--gray);">m</span>
+                </div>
+                <div class="cd-unit" style="min-width:40px;padding:0.3rem 0.5rem;background:var(--blue-light);">
+                  <span class="cd-num" data-secs style="color:var(--blue-deep);font-size:1.1rem;">00</span>
+                  <span class="cd-label" style="color:var(--gray);">s</span>
+                </div>
+              </div>
+              <a href="sucursales.html" class="btn btn-orange btn-full">Ver sucursales</a>
+            </div>
+          </article>
+
+          <!-- Promo 4: Descuento medio de pago -->
+          <article class="promo-card reveal"
+                   itemscope itemtype="https://schema.org/Offer">
+            <div class="promo-card-head color-1">
+              <div class="discount"><span>%</span>20</div>
+              <h3 itemprop="name">OFF con tarjetas bancarias</h3>
+            </div>
+            <div class="promo-card-body">
+              <p itemprop="description">
+                Pagando con Visa, Mastercard o American Express obtenés 20% de
+                descuento en todo el catálogo. Válido de lunes a viernes.
+              </p>
+              <div class="promo-validity">
+                📅 Lunes a viernes · Sin mínimo de compra
+              </div>
+              <a href="contacto.html" class="btn btn-white btn-full"
+                 style="background:var(--navy);color:var(--white);margin-top:1rem;">
+                Consultar tarjetas participantes
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         TÚNEL DE CONVERSIÓN VISUAL
+         Punto 7 del trabajo: visualización del funnel
+    ════════════════════════════════════════════ -->
+    <section class="funnel-section" aria-label="Cómo funciona el proceso de compra">
+      <div class="container">
+        <span class="section-eyebrow" style="color:var(--yellow);">Estrategia de marketing</span>
+        <h2 class="funnel-title">¿Cómo llegás hasta tu helado?</h2>
+        <p class="funnel-sub">
+          Este es el camino que recorre cada cliente desde que ve un anuncio hasta que vuelve a comprarnos.
+        </p>
+
+        <div class="funnel-steps">
+
+          <div class="funnel-step reveal">
+            <div class="funnel-dot">📢</div>
+            <span class="funnel-step-num">Etapa 01</span>
+            <h3 class="funnel-step-name">Atracción</h3>
+            <p class="funnel-step-desc">
+              Anuncios en Instagram, Facebook y Google Ads con promociones de temporada.
+            </p>
+            <span class="funnel-step-tag">Publicidad segmentada</span>
+          </div>
+
+          <div class="funnel-step reveal">
+            <div class="funnel-dot">🔍</div>
+            <span class="funnel-step-num">Etapa 02</span>
+            <h3 class="funnel-step-name">Interés</h3>
+            <p class="funnel-step-desc">
+              El usuario visita la web de Grido. Diseño claro, fotos y propuesta de valor directa.
+            </p>
+            <span class="funnel-step-tag">UX + SEO</span>
+          </div>
+
+          <div class="funnel-step reveal">
+            <div class="funnel-dot active">🏷️</div>
+            <span class="funnel-step-num">Etapa 03</span>
+            <h3 class="funnel-step-name">Consideración</h3>
+            <p class="funnel-step-desc">
+              Compara promos, lee reseñas y evalúa los descuentos disponibles.
+            </p>
+            <span class="funnel-step-tag">Esta página</span>
+          </div>
+
+          <div class="funnel-step reveal">
+            <div class="funnel-dot">🛒</div>
+            <span class="funnel-step-num">Etapa 04</span>
+            <h3 class="funnel-step-name">Conversión</h3>
+            <p class="funnel-step-desc">
+              Compra el producto. Proceso simple, múltiples medios de pago y urgencia con countdown.
+            </p>
+            <span class="funnel-step-tag">Checkout rápido</span>
+          </div>
+
+          <div class="funnel-step reveal">
+            <div class="funnel-dot">💛</div>
+            <span class="funnel-step-num">Etapa 05</span>
+            <h3 class="funnel-step-name">Fidelización</h3>
+            <p class="funnel-step-desc">
+              Email marketing, Grido Club y descuentos para clientes frecuentes.
+            </p>
+            <span class="funnel-step-tag">Retención</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         EMAIL MARKETING STRIP
+         Punto 4: Estrategia de email marketing
+    ════════════════════════════════════════════ -->
+    <section class="email-strip" aria-label="Suscribirse a newsletter">
+      <div class="container">
+        <div class="email-strip-inner">
+          <div>
+            <h2>Recibí las mejores promos antes que nadie</h2>
+            <p>Suscribite al newsletter de Grido y enterate de descuentos exclusivos cada semana.</p>
+          </div>
+          <div class="email-form" role="form" aria-label="Formulario de suscripción">
+            <input
+              type="email"
+              placeholder="tu@email.com"
+              aria-label="Tu dirección de correo electrónico"
+            >
+            <button type="button" onclick="this.textContent='¡Suscripto! 🎉'; this.disabled=true; setTimeout(()=>{this.textContent='Suscribirme';this.disabled=false;},3500);">
+              Suscribirme
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══════════════════════════════ FOOTER ══ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">gri<span class="accent">do</span></a>
+          <p>La cadena de heladerías más popular de Argentina. Más de 1700 sucursales para que el sabor siempre esté cerca tuyo.</p>
+        </div>
+        <nav class="footer-col" aria-label="Productos">
+          <h4>Productos</h4>
+          <ul>
+            <li><a href="productos.html">Familiares</a></li>
+            <li><a href="productos.html">Copas</a></li>
+            <li><a href="productos.html">Postres</a></li>
+            <li><a href="productos.html">Especialidades</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-col" aria-label="Empresa">
+          <h4>Empresa</h4>
+          <ul>
+            <li><a href="#">Sobre Grido</a></li>
+            <li><a href="#">Franquicias</a></li>
+            <li><a href="sucursales.html">Sucursales</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-col" aria-label="Legal">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#">Política de privacidad</a></li>
+            <li><a href="#">Términos de uso</a></li>
+            <li><a href="#">Cookies</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Grido S.A. Todos los derechos reservados.</span>
+        <span class="seo-note">Proyecto académico – Seminario de Big Data</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
