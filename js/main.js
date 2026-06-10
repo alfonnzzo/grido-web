@@ -1,12 +1,5 @@
-/* ============================================================
-   GRIDO — JavaScript principal
-   Comportamiento dinámico: menú móvil, filtros, countdown,
-   formulario, animaciones de scroll.
-   ============================================================ */
-
 document.addEventListener('DOMContentLoaded', () => {
 
-  /* ── 1. Menú hamburguesa (móvil) ─────────────────────────── */
   const hamburger = document.getElementById('hamburger');
   const navLinks  = document.getElementById('navLinks');
 
@@ -15,13 +8,11 @@ document.addEventListener('DOMContentLoaded', () => {
       const open = navLinks.classList.toggle('open');
       hamburger.setAttribute('aria-expanded', open);
     });
-    // Cerrar al hacer click en un enlace
     navLinks.querySelectorAll('a').forEach(a => {
       a.addEventListener('click', () => navLinks.classList.remove('open'));
     });
   }
 
-  /* ── 2. Marcar enlace activo en nav ──────────────────────── */
   const currentFile = window.location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('.nav-links a').forEach(a => {
     const href = a.getAttribute('href');
@@ -30,7 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  /* ── 3. Filtro de productos (tabs) ───────────────────────── */
   const tabBtns  = document.querySelectorAll('.tab-btn');
   const prodCards = document.querySelectorAll('.card[data-cat]');
 
@@ -43,7 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
       prodCards.forEach(card => {
         const match = filter === 'all' || card.dataset.cat === filter;
         card.style.display = match ? '' : 'none';
-        // Re-trigger reveal animation
         if (match) {
           card.classList.remove('visible');
           requestAnimationFrame(() => {
@@ -54,7 +43,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /* ── 4. Countdown timer ──────────────────────────────────── */
   function startCountdown(targetDate, containerId) {
     const container = document.getElementById(containerId);
     if (!container) return;
@@ -86,13 +74,11 @@ document.addEventListener('DOMContentLoaded', () => {
     setInterval(tick, 1000);
   }
 
-  // Promo: fin del verano 2026
   startCountdown('2026-08-31T23:59:59', 'countdown-hero');
   startCountdown('2026-08-31T23:59:59', 'countdown-promo1');
   startCountdown('2026-07-15T23:59:59', 'countdown-promo2');
   startCountdown('2026-09-15T23:59:59', 'countdown-promo3');
 
-  /* ── 5. Formulario de contacto ───────────────────────────── */
   const form    = document.getElementById('contactForm');
   const success = document.getElementById('success-msg');
   const submitBtn = form ? form.querySelector('button[type="submit"]') : null;
@@ -104,7 +90,6 @@ document.addEventListener('DOMContentLoaded', () => {
         submitBtn.disabled = true;
         submitBtn.textContent = 'Enviando…';
       }
-      // Simular latencia de red
       setTimeout(() => {
         form.reset();
         if (success) { success.style.display = 'block'; }
@@ -119,7 +104,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ── 6. Scroll reveal con IntersectionObserver ───────────── */
   const revealItems = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window) {
     const observer = new IntersectionObserver((entries) => {
@@ -133,11 +117,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     revealItems.forEach(el => observer.observe(el));
   } else {
-    // Fallback: mostrar todo si no hay soporte
     revealItems.forEach(el => el.classList.add('visible'));
   }
 
-  /* ── 7. Navbar scroll shadow ─────────────────────────────── */
   const navbar = document.querySelector('.navbar');
   if (navbar) {
     window.addEventListener('scroll', () => {
